@@ -8,7 +8,7 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         # return method1(nums, target)
-        return method2(nums, target)
+        return method3(nums, target)
 
 # def method1(nums, target):
 #     '''time: O(n^2)  space: O(1)
@@ -35,7 +35,30 @@ def method1(nums, target):
 def method2(nums, target):
     ''' time: O(n) space: O(n)
     use hash table, trade space for time
+    29/29 cases passed (68 ms)
+    Your runtime beats 55.29 % of python3 submissions
+    Your memory usage beats 5.48 % of python3 submissions (15.2 MB)
     '''
-    
+    d = {}
+    for i, v in enumerate(nums):
+        d[v] = i
+    for i in range(len(nums)):
+        value = target - nums[i] 
+        if value in d and i != d[value]:
+            return [i, d[value]]
+
+def method3(nums, target):
+    ''' improvment of method2
+    29/29 cases passed (64 ms)
+    Your runtime beats 60.07 % of python3 submissions
+    Your memory usage beats 5.48 % of python3 submissions (15.2 MB)
+    '''
+    d = {}
+    n = len(nums)
+    for i in range(n):
+        if target-nums[i] in d:
+            return [d[target-nums[i]], i]
+        else:
+            d[nums[i]] = i
 # @lc code=end
 
