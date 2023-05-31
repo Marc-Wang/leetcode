@@ -7,8 +7,8 @@
 # @lc code=start
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        return basic(nums, target)
-        # return hash(nums, target)
+        # return basic(nums, target)
+        return hash(nums, target)
 
 
 
@@ -16,13 +16,16 @@ class Solution:
 def basic(nums, target):
     # nested 2 for loop 
     # O(n^2)
-    for i in range(10):
-        for j in range(i+1, 10):
+    length = len(nums)
+    for i in range(length):
+        for j in range(i+1, length):
             if nums[i] + nums[j] == target:
                 return [i, j]
     return [0, 0]
 
-# def hash(nums, target):
-
+def hash(nums, target):
+    # use hash table
+    # O()
+    
 # @lc code=end
 
