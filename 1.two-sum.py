@@ -15,6 +15,7 @@ def s1(nums: list[int], target: int):
     myhash = {}
     for key in nums:
         print(key)
+    return [1,2]
 
 # test
 nums = [2,7,11,15] 
