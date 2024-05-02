@@ -1,2 +1,2 @@
-## This is a leetcode problem solving repo
+## This is a leetcode problem solving
 Add some new contents
